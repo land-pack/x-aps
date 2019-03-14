@@ -1,6 +1,3 @@
-from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
-scheduler = BackgroundScheduler()
 from tornado.ioloop import IOLoop
 from apscheduler.schedulers.tornado import TornadoScheduler
 # Initialize the rest of the application here, or before the scheduler initialization.
@@ -9,7 +6,7 @@ from apscheduler.schedulers.tornado import TornadoScheduler
 class Job(object):
     
     def __init__(self, ioloop=None, tosp=None):
-        self.ioloop = ioloop or IOLoop.instance()
+        self.ioloop = ioloop or IOLoop.current()
         self.scheduler = tosp or TornadoScheduler()
     
     def cron(self, *args, **kwargs):

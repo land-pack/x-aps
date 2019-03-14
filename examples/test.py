@@ -1,9 +1,7 @@
 import time
 from cron import Job
-from tornado.ioloop import IOLoop
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
-#IOLoop.instance()
 job = Job()
 counter = 0
 
