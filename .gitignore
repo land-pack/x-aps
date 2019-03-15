@@ -1,1 +1,4 @@
 *.pyc
+x_aps.egg-info/*
+dist/*
+
